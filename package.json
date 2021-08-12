@@ -1,0 +1,26 @@
+{
+  "name": "time-js",
+  "version": "1.0.0",
+  "description": "Test JS time handling",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwhutchison/time-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwhutchison/time-js/issues"
+  },
+  "homepage": "https://github.com/jwhutchison/time-js#readme",
+  "dependencies": {
+    "consola": "^2.15.3",
+    "date-fns-tz": "^1.1.6",
+    "luxon": "^2.0.2",
+    "moment-timezone": "^0.5.33"
+  }
+}
