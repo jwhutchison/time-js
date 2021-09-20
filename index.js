@@ -4,6 +4,12 @@ const moment = require('moment-timezone');
 const { format, utcToZonedTime, zonedTimeToUtc } = require('date-fns-tz');
 const { add, formatDistance, formatRelative } = require('date-fns');
 
+const dayjs = require('dayjs');
+var localizedFormat = require('dayjs/plugin/localizedFormat');
+var relativeTime = require('dayjs/plugin/relativeTime');
+var utc = require('dayjs/plugin/utc');
+var timezone = require('dayjs/plugin/timezone');
+
 // Simple test assert with a message
 function assert(message, condition, stack = false) {
 	if (condition) {
@@ -265,3 +271,46 @@ consola.info('Relative dates:', {
     relative: formatRelative(fnsDate30Days, fnsDate30Days),
     duration: formatDistance(fnsDate30Days, fnsDate),
 });
+
+/**
+ * Using Day.js
+ *
+ * Instead of modifying the native Date.prototype, Day.js creates a wrapper for the Date object. To get this wrapper object, simply call dayjs() with one of the supported input types.
+ *
+ * The Day.js object is immutable, that is, all API operations that change the Day.js object in some way will return a new instance of it.
+ *
+ * @link http://day.js.org/en/
+ */
+
+section('Using Day.js');
+
+const dayjsDate = dayjs(ISO8601_Date);
+dayjs.extend(localizedFormat);
+dayjs.extend(relativeTime);
+dayjs.extend(utc)
+dayjs.extend(timezone)
+
+consola.info('Parsed:', {
+    dayjsDate,
+    ISO: dayjsDate.toISOString(),
+});
+
+assert(
+    'Parsed ISO date should be the same timestamp as localized default',
+    +dayjsDate === +(DateTime.fromISO(ISO8601_Date)),
+);
+assert(
+    'Parsed ISO date should match input ISO date',
+    dayjsDate.toISOString() === ISO8601_Date,
+);
+assert(
+    `Default date format in ${timeZone} should be correct`,
+    dayjsDate.format('YYYY-MM-DD HH:mm:ss') === '2021-06-30 18:00:00',
+);
+
+consola.info(`Formatting examples for ${timeZone}:`, {
+    'String of Tokens':  dayjsDate.format('MMMM D, YYYY h:mm A'),
+    'LocalizedFormat Plugin': dayjsDate.format('L LT'),
+    'RelativeTime Plugin': dayjsDate.fromNow(),
+});
+
