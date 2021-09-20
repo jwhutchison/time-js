@@ -21,6 +21,7 @@
     "consola": "^2.15.3",
     "date-fns": "^2.23.0",
     "date-fns-tz": "^1.1.6",
+    "dayjs": "^1.10.7",
     "luxon": "^2.0.2",
     "moment-timezone": "^0.5.33"
   }
