@@ -1,7 +1,7 @@
 const consola = require('consola');
 const { DateTime, Duration } = require('luxon')
 const moment = require('moment-timezone');
-const { format, utcToZonedTime } = require('date-fns-tz');
+const { format, utcToZonedTime, zonedTimeToUtc } = require('date-fns-tz');
 const { add, formatDistance, formatRelative } = require('date-fns');
 
 // Simple test assert with a message
