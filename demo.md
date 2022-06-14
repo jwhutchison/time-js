@@ -19,3 +19,7 @@
   * Native
   * Existing code: native strtotime() and dateformat()
   * New code: DateTime and DateTimeZone
+
+Absolute timestamp (unix time) => 1625101200
+MySQL format (system TZ dependent) => 2022-05-11 11:00:00
+ISO8601 format (independent) => 2022-05-11T11:00:00.000Z

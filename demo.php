@@ -81,3 +81,8 @@ EOT;
 // $objDate = new DateTime($objRecord->meeting_time, new DateTimeZone('UTC'));
 // $objDate->setTimezone(new DateTimeZone('America/Phoenix'));
 // $this->view->strMeetingTime = $objDate->format('Y-m-d H:i:s');
+
+// Same example in Carbon
+// $objDate = new Carbon($objRecord->meeting_time, 'UTC');
+// $objDate->setTimezone('America/Phoenix');
+// $this->view->strMeetingTime = $objDate->format('Y-m-d H:i:s');

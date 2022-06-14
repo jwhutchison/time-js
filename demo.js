@@ -120,7 +120,7 @@ console.log(luxonDate.toString());
 console.log(+luxonDate === +(DateTime.fromISO(ISO8601_Date)));
 // Luxon can parse from formats other than ISO8601
 console.log(DateTime.fromFormat(MySQL_Date, 'yyyy-MM-dd HH:mm:ss', { zone: 'UTC' }));
-console.log(luxonDateZoned.toFormat('yyyy-MM-dd HH:mm:ss') === '2021-06-30 18:00:00');
+console.log(luxonDateZoned.toFormat('yyyy-MM-dd HH:mm:ss'));
 
 console.log('dddd, MMMM Do YYYY, h:mm:ss a', luxonDateZoned.toFormat('dddd, MMMM Do YYYY, h:mm:ss a'));
 console.log('LLL d, yyyy', luxonDateZoned.toFormat('LLL d, yyyy'));
