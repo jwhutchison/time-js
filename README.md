@@ -10,8 +10,8 @@ various libraries.
 * Day.js
 
 ```bash
-yarn install
-yarn start
+npm install
+npm start
 ```
 
 ## My Thoughts
